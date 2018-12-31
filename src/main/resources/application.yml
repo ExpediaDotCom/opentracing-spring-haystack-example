@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: springbootsample
+    
+opentracing:
+  haystack:
+    dispatchers:
+      logger:
+        name: span-logger
+
+
