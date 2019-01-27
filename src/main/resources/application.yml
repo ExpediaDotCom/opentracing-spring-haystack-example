@@ -1,11 +1,18 @@
 spring:
   application:
     name: springbootsample
-    
+
+server:
+   port: 9090
+   
 opentracing:
   haystack:
     dispatchers:
       logger:
         name: span-logger
+      agent:
+        enabled: true
+        host: localhost
+        port: 34000
 
 
