@@ -3,19 +3,19 @@
 Required:
 
 * Java 1.8
-* Maven 3.x or higher
 
 
 Build:
 
 ```bash
-mvn clean package
+./mvn clean compile
 ```
 
 Run:
 
 ```bash
-java -jar target/haystack-springboot-sample.jar
+./mvnw exec:java -Dstart-class=magesh.sample.Backend
+./mvnw exec:java -Dstart-class=magesh.sample.Frontend
 ```
 
 Send Requests:

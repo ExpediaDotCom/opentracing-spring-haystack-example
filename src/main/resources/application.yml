@@ -1,10 +1,3 @@
-spring:
-  application:
-    name: springbootsample
-
-server:
-   port: 9090
-   
 opentracing:
   haystack:
     dispatchers:

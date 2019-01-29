@@ -17,7 +17,6 @@
 
     <properties>
         <io-micrometer.version>1.1.1</io-micrometer.version>
-        <start-class>magesh.sample.Starter</start-class>
     </properties>
     
     <dependencies>
@@ -45,8 +44,16 @@
         <finalName>haystack-springboot-sample</finalName>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
