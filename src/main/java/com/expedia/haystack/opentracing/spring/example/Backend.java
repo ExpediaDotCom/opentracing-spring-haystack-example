@@ -1,4 +1,4 @@
-package magesh.sample;
+package com.expedia.haystack.opentracing.spring.example;
 
 import io.micrometer.core.instrument.MeterRegistry;
 import java.util.Random;

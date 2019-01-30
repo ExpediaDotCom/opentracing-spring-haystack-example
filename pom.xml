@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>magesh.sample</groupId>
-    <artifactId>springboot-sample</artifactId>
+    <groupId>com.expedia.haystack</groupId>
+    <artifactId>opentracing-spring-haystack-example</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <parent>
@@ -15,10 +15,6 @@
         <relativePath />
     </parent>
 
-    <properties>
-        <io-micrometer.version>1.1.1</io-micrometer.version>
-    </properties>
-    
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -31,7 +27,7 @@
         <dependency>
             <groupId>io.micrometer</groupId>
             <artifactId>micrometer-registry-jmx</artifactId>
-            <version>${io-micrometer.version}</version>
+            <version>1.1.1</version>
         </dependency>
         <dependency>
             <groupId>com.expedia.www</groupId>
@@ -41,7 +37,7 @@
     </dependencies>
 
     <build>
-        <finalName>haystack-springboot-sample</finalName>
+        <finalName>opentracing-spring-haystack-example</finalName>
         <plugins>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>

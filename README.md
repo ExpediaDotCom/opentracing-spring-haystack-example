@@ -14,8 +14,8 @@ Build:
 Run:
 
 ```bash
-./mvnw exec:java -Dstart-class=magesh.sample.Backend
-./mvnw exec:java -Dstart-class=magesh.sample.Frontend
+./mvnw exec:java -Dstart-class=com.expedia.haystack.opentracing.spring.example.Backend
+./mvnw exec:java -Dstart-class=com.expedia.haystack.opentracing.spring.example.Frontend
 ```
 
 Send Requests:
@@ -29,3 +29,4 @@ Note:
 If haystack-agent is not running locally, one can set `opentracing.haystack.agent.enabled = false` setting in the application.yml. 
 
 To start haystack and agent locally, one can follow the instructions at [https://github.com/mchandramouli/haystack-docker#to-start-traces-and-trends](https://github.com/mchandramouli/haystack-docker#to-start-traces-and-trends)
+    
