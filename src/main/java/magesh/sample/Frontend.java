@@ -1,6 +1,5 @@
 package magesh.sample;
 
-import com.expedia.haystack.opentracing.spring.starter.support.TracerCustomizer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
@@ -27,11 +26,6 @@ public class Frontend {
     @Bean
     RestTemplate restTemplate() {
         return new RestTemplate();
-    }
-
-    @Bean
-    public TracerCustomizer tracerCustomizer() {
-        return new TraceHeaderCustomizer();
     }
 
     public static void main(String[] args) {
