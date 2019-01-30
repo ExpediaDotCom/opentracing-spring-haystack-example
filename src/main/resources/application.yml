@@ -3,9 +3,5 @@ opentracing:
     dispatchers:
       logger:
         name: span-logger
-      agent:
-        enabled: true
-        host: localhost
-        port: 34000
 
 

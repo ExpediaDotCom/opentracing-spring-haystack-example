@@ -20,7 +20,7 @@ public class Frontend {
 
     @RequestMapping("/hello")
     public String callBackend() {
-        return restTemplate.getForObject(backendBaseUrl + "/api", String.class);
+        return restTemplate.getForObject(backendBaseUrl + "/api/hello", String.class);
     }
 
     @Bean

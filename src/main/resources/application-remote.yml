@@ -1,0 +1,7 @@
+opentracing:
+  haystack:
+    dispatchers:
+      agent:
+        enabled: true
+        host: localhost
+        port: 34000

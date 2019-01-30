@@ -1,6 +1,7 @@
 package com.expedia.haystack.opentracing.spring.example;
 
 import io.micrometer.core.instrument.MeterRegistry;
+import java.util.Calendar;
 import java.util.Random;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -20,11 +21,11 @@ public class Backend {
         this.metricRegistry = metricRegistry;
     }
 
-    @GetMapping("/api")
+    @GetMapping("/api/hello")
     public String sayHello() throws InterruptedException {
         Thread.sleep(Math.abs(random.nextLong()) % 1000);
         metricRegistry.counter("hello").increment();
-        return "Hello World!";
+        return "Hello, It's " + Calendar.getInstance().getTime().toString();
     }
 
     public static void main(String[] args) {
