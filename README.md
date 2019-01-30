@@ -8,7 +8,7 @@ Required:
 Build:
 
 ```bash
-./mvn clean compile
+./mvnw clean compile
 ```
 
 Run:
