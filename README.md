@@ -83,14 +83,16 @@ and send a sample request
 curl http://localhost:9090/hello
 ```
 
-And then open Haystack UI at [http://localhost:8080/] and search for `serviceName=frontend` to see the traces.
-
+And then open Haystack UI at [http://localhost:8080/](http://localhost:8080/) and search for `serviceName=frontend` to see the traces. (see screenshot above)
 
 One can also use the sample script we have to send more requests to the sample application and see metrics such as count, duration histogram etc in Haystack UI under trends.
 
 ```bash
 ./run.sh
 ```
+
+Screenshot of the trends view with computed metrics:
+
 
 ![haystack-ui](doc/screenshot-trends.png)
 
