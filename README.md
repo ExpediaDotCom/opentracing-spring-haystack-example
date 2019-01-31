@@ -4,8 +4,9 @@
 - [About this example](#about-this-example)
   * [Instrumentation](#instrumentation)
 - [Running this example](#running-this-example)
-  * [With no backend](#with-no-backend)
-  * [with Haystack server](#with-haystack-server)
+  * [Build](#build)
+  * [Run with no backend](#run-with-no-backend)
+  * [Run with Haystack server](#run-with-haystack-server)
 
 ## Opentracing-spring-haystack-web-starter example
 
@@ -25,9 +26,9 @@ This is a very basic example that can output the instrumentation to console and/
 
 If one peeks into the code, both [Frontend.java](src/main/java/com/expedia/haystack/opentracing/spring/example/Frontend.java) and [Backend.java](src/main/java/com/expedia/haystack/opentracing/spring/example/Backend.java) are simple Spring controllers with no additional instrumentation code.  Most of the instrumentation is done by the dependency `opentracing-spring-haystack-web-starter`, that is included in the [pom.xml](pom.xml). For more information how this library works, one can check the documentations at [https://github.com/opentracing-contrib/java-spring-cloud](https://github.com/opentracing-contrib/java-spring-cloud) and [https://github.com/ExpediaDotCom/haystack-client-java/tree/master/integrations/opentracing-spring-haystack-web-starter](https://github.com/ExpediaDotCom/haystack-client-java/tree/master/integrations/opentracing-spring-haystack-web-starter)
 
-
-
 ## Running this example
+
+### Build
 
 Required:
 
@@ -42,7 +43,7 @@ Build:
 
 There are two modes to run the application. One with no `Haystack` server, where the instrumentation is simply logged to the console and with Haystack server.
 
-### With no backend
+### Run with no backend
 
 In this mode, the application runs with the configuration in [application.yml](src/main/resources/application.yml) which configures the instrumentation to use a simple logger as the dispatcher.
 
@@ -75,7 +76,7 @@ And one line in the backend console log for the request it received from the fro
 ```
 
 
-### with Haystack server
+### Run with Haystack server
 
 To start haystack and agent locally, one can follow the instructions at [https://github.com/mchandramouli/haystack-docker#to-start-traces-and-trends](https://github.com/mchandramouli/haystack-docker#to-start-traces-and-trends)
  
