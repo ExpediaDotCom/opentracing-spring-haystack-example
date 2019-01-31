@@ -1,3 +1,12 @@
+## Table of Contents
+
+- [Opentracing-spring-haystack-web-starter example](#opentracing-spring-haystack-web-starter-example)
+- [About this example](#about-this-example)
+  * [Instrumentation](#instrumentation)
+- [Running this example](#running-this-example)
+  * [With no backend](#with-no-backend)
+  * [with Haystack server](#with-haystack-server)
+
 ## Opentracing-spring-haystack-web-starter example
 
 In this example, the two spring controllers call one from another to show a client and server working with tracing instrumentation. Telemetry from this application is recorded in [Haystack](http://expediadotcom.github.io/haystack/) server, a distributed tracing system. Haystack will allow one to see the service call dependency and how long it took for the whole operation to complete. Here is what a sample output in the UI will look like: 
@@ -66,7 +75,7 @@ And one line in the backend console log for the request it received from the fro
 ```
 
 
-## with Haystack server
+### with Haystack server
 
 To start haystack and agent locally, one can follow the instructions at [https://github.com/mchandramouli/haystack-docker#to-start-traces-and-trends](https://github.com/mchandramouli/haystack-docker#to-start-traces-and-trends)
  
