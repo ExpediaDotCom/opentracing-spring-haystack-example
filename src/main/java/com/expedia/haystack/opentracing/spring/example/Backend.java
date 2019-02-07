@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Backend {
 
+    private static final int DIVIDER = 50;
     private final MeterRegistry metricRegistry;
     private final Random random = new Random(System.currentTimeMillis());
+    private long count = 1;
 
     @Autowired
     public Backend(MeterRegistry metricRegistry) {
@@ -23,7 +25,13 @@ public class Backend {
 
     @GetMapping("/api/hello")
     public String sayHello() throws InterruptedException {
-        Thread.sleep(Math.abs(random.nextLong()) % 1000);
+        if((count % DIVIDER) == 0) {
+            // Creating anomalous sleep for anomaly detection
+            Thread.sleep(60000);
+        } else {
+            Thread.sleep(Math.abs(random.nextLong()) % 1000);
+        }
+        count++;
         metricRegistry.counter("hello").increment();
         return "Hello, It's " + Calendar.getInstance().getTime().toString();
     }
