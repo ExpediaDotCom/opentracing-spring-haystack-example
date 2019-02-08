@@ -78,7 +78,7 @@ And one line in the backend console log for the request it received from the fro
 
 ### Run with Haystack server
 
-To start haystack and agent locally, one can follow the instructions at [https://github.com/mchandramouli/haystack-docker#to-start-traces-and-trends](https://github.com/mchandramouli/haystack-docker#to-start-traces-and-trends)
+To start haystack and agent locally, one can follow the instructions at [https://github.com/ExpediaDotCom/haystack-docker#to-start-haystacks-traces-trends-and-service-graph](https://github.com/ExpediaDotCom/haystack-docker#to-start-haystacks-traces-trends-and-service-graph)
  
 After starting Haystack server, run this example with the following commands. This starts the application with the configuration in [application-remote.yml](src/main/resources/application-remote.yml)
 
