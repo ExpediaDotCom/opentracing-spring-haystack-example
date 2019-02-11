@@ -27,7 +27,7 @@ public class Backend {
     @GetMapping("/api/hello")
     public String sayHello() throws InterruptedException {
         // Creating sleep for anomalous response every 5th clock minute
-        if((System.currentTimeMillis() / 1000 % 300) == 0) {
+        if((System.currentTimeMillis() / 1000) % 300 == 0) {
             Thread.sleep(random.nextLong());
         }
         metricRegistry.counter("hello").increment();
