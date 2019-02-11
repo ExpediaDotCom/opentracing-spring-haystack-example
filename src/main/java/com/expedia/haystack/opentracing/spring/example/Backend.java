@@ -2,6 +2,7 @@ package com.expedia.haystack.opentracing.spring.example;
 
 import io.micrometer.core.instrument.MeterRegistry;
 import java.util.Calendar;
+import java.util.PrimitiveIterator;
 import java.util.Random;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -13,10 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Backend {
 
-    private static final int DIVIDER = 50;
     private final MeterRegistry metricRegistry;
-    private final Random random = new Random(System.currentTimeMillis());
-    private long count = 1;
+    private final PrimitiveIterator.OfLong random = new Random(System.currentTimeMillis())
+            .longs(30000, 60000)
+            .iterator();
 
     @Autowired
     public Backend(MeterRegistry metricRegistry) {
@@ -25,13 +26,10 @@ public class Backend {
 
     @GetMapping("/api/hello")
     public String sayHello() throws InterruptedException {
-        if((count % DIVIDER) == 0) {
-            // Creating anomalous sleep for anomaly detection
-            Thread.sleep(60000);
-        } else {
-            Thread.sleep(Math.abs(random.nextLong()) % 1000);
+        // Creating sleep for anomalous response every 5th clock minute
+        if((System.currentTimeMillis() / 1000 % 300) == 0) {
+            Thread.sleep(random.nextLong());
         }
-        count++;
         metricRegistry.counter("hello").increment();
         return "Hello, It's " + Calendar.getInstance().getTime().toString();
     }
