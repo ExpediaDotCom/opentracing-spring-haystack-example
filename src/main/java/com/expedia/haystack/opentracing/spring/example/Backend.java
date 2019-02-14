@@ -16,7 +16,7 @@ public class Backend {
 
     private final MeterRegistry metricRegistry;
     private final PrimitiveIterator.OfLong random = new Random(System.currentTimeMillis())
-            .longs(30000, 60000)
+            .longs(1000, 1500)
             .iterator();
 
     @Autowired
@@ -27,8 +27,14 @@ public class Backend {
     @GetMapping("/api/hello")
     public String sayHello() throws InterruptedException {
         // Creating sleep for anomalous response every 5th clock minute
-        if((System.currentTimeMillis() / 1000) % 300 == 0) {
+        long currentTime = (System.currentTimeMillis() / 1000);
+        long modulo = currentTime % 900;
+        if( modulo >= 0 && modulo < 60) {
+            System.out.println("Random Sleep");
             Thread.sleep(random.nextLong());
+            throw new RuntimeException("Anomalous Failure");
+        } else if(currentTime % 60 == 1) {
+            throw new RuntimeException("Random Failure");
         }
         metricRegistry.counter("hello").increment();
         return "Hello, It's " + Calendar.getInstance().getTime().toString();
