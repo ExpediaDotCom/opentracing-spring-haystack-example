@@ -54,6 +54,14 @@ To run the example in this mode, execute
 ./mvnw exec:java -Dstart-class=com.expedia.haystack.opentracing.spring.example.Starter -Dexec.args="frontend"
 ```
 
+or with docker 
+
+```
+docker build -t opentracing-spring-haystack-example .
+docker run -e APP_MODE=frontend -p 9090:9090 -t opentracing-spring-haystack-example:latest
+docker run -e APP_MODE=backend -p 9091:9091 -t opentracing-spring-haystack-example:latest
+```
+
 and send a sample request
 
 ```bash
@@ -85,6 +93,13 @@ After starting Haystack server, run this example with the following commands. Th
 ```bash
 ./mvnw exec:java -Dstart-class=com.expedia.haystack.opentracing.spring.example.Starter -Dexec.args="backend" -Dspring.profiles.active=remote
 ./mvnw exec:java -Dstart-class=com.expedia.haystack.opentracing.spring.example.Starter -Dexec.args="frontend" -Dspring.profiles.active=remote
+```
+or with docker as
+
+```
+docker build -t opentracing-spring-haystack-example .
+docker run -e APP_MODE=frontend -e SPRING_PROFILE=remote -p 9090:9090 -t opentracing-spring-haystack-example:latest
+docker run -e APP_MODE=backend -e SPRING_PROFILE=remote -p 9091:9091 -t opentracing-spring-haystack-example:latest
 ```
 
 and send a sample request
