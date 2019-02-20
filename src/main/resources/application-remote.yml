@@ -3,5 +3,5 @@ opentracing:
     dispatchers:
       agent:
         enabled: true
-        host: localhost
+        host: ${HAYSTACK_AGENT_HOST:localhost}
         port: 34000
