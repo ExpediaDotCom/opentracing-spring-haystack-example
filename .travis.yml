@@ -1,0 +1,30 @@
+sudo: required
+dist: trusty
+
+language: java
+
+jdk:
+  - oraclejdk8
+
+services:
+  - docker
+
+env:
+  global:
+    - BRANCH=${TRAVIS_BRANCH}
+    - TAG=${TRAVIS_TAG}
+    - SHA=${TRAVIS_COMMIT}
+
+cache:
+  directories:
+    - $HOME/.m2
+
+install:
+  - ./mvnw clean package
+  - docker build -t opentracing-spring-haystack-example .
+
+deploy:
+  provider: script
+  script: bash docker_push.sh
+  on:
+    branch: master
