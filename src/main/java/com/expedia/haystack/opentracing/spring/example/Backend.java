@@ -45,7 +45,7 @@ public class Backend {
         long modulo = currentTime % 900;
 
         if( modulo >= 0 && modulo < 60) {
-            // mocking some random slow down and failures every 15th minute
+            // mocking some random slowdown and failures every 15th minute
             Thread.sleep(random.nextLong());
             throw new RandomException("Anomalous Failure");
         } else if(currentTime % 60 == 1) {
