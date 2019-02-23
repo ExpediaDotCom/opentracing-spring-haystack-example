@@ -41,17 +41,25 @@ public class Backend {
 
     @GetMapping("/api/hello")
     public String sayHello() throws InterruptedException {
-        // Creating sleep for anomalous response every 5th clock minute
         long currentTime = (System.currentTimeMillis() / 1000);
         long modulo = currentTime % 900;
+
         if( modulo >= 0 && modulo < 60) {
-            System.out.println("Random Sleep");
+            // mocking some random slow down and failures every 15th minute
             Thread.sleep(random.nextLong());
-            throw new RuntimeException("Anomalous Failure");
+            throw new RandomException("Anomalous Failure");
         } else if(currentTime % 60 == 1) {
-            throw new RuntimeException("Random Failure");
+            // and some trickle failure every minute
+            throw new RandomException("Random Failure");
         }
+
         metricRegistry.counter("hello").increment();
         return "Hello, It's " + Calendar.getInstance().getTime().toString();
+    }
+
+    private final class RandomException extends RuntimeException {
+        RandomException(String message) {
+            super(message);
+        }
     }
 }
