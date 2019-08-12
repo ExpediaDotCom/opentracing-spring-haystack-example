@@ -4,4 +4,4 @@ opentracing:
       agent:
         enabled: true
         host: ${HAYSTACK_AGENT_HOST:localhost}
-        port: 34000
+        port: 35000
