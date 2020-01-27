@@ -3,5 +3,8 @@ opentracing:
     dispatchers:
       logger:
         name: span-logger
-
-
+haystack:
+  blobs:
+   enabled: true
+   store:
+    name: file

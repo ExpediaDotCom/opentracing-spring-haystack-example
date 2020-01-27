@@ -18,7 +18,7 @@ In this example, the two spring controllers call one from another to show a clie
 
 ## About this example
 
-This is a very basic example that can output the instrumentation to console and/or a Haystack server. This is an example application written with two simple Spring controllers to show how a spring application can be instrumented with [opentracing-spring-haystack-web-starter](https://github.com/ExpediaDotCom/haystack-client-java/tree/master/integrations/opentracing-spring-haystack-web-starter). 
+This is a very basic example that can output the instrumentation to console and/or a Haystack server. It also shows the blobs integration. Every request/response that hits the server and sent by REST client is captured as the blobs. A corresponding tag is written to derefer the blobs' location. This is an example application written with two simple Spring controllers to show how a spring application can be instrumented with [opentracing-spring-haystack-web-starter](https://github.com/ExpediaDotCom/haystack-client-java/tree/master/integrations/opentracing-spring-haystack-web-starter). 
 
 * Controller one:  Backend.  This listens on port 9091 and exposes one endpoint : http://localhost:9091/api/hello - when invoked, it returns a simple string like `Hello, It's Wed Jan 30 11:06:37 PST 2019`
 

@@ -32,7 +32,7 @@
         <dependency>
             <groupId>com.expedia.www</groupId>
             <artifactId>opentracing-spring-haystack-web-starter</artifactId>
-            <version>0.2.7</version>
+            <version>0.3.0</version>
         </dependency>
     </dependencies>
 

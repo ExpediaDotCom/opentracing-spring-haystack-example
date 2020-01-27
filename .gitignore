@@ -4,3 +4,4 @@ target/
 *.ipr
 *.iws
 dependency-reduced-pom.xml
+blobs/
