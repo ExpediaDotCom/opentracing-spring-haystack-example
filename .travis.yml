@@ -9,15 +9,15 @@ jdk:
 services:
   - docker
 
+cache:
+  directories:
+    - $HOME/.m2
+
 env:
   global:
     - BRANCH=${TRAVIS_BRANCH}
     - TAG=${TRAVIS_TAG}
     - SHA=${TRAVIS_COMMIT}
-
-cache:
-  directories:
-    - $HOME/.m2
 
 install:
   - ./mvnw clean package

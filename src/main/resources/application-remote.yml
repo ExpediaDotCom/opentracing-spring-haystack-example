@@ -5,3 +5,10 @@ opentracing:
         enabled: true
         host: ${HAYSTACK_AGENT_HOST:localhost}
         port: 35000
+haystack:
+ blobs:
+  enabled: true
+  store:
+   name: agent
+   host: ${HAYSTACK_AGENT_HOST:localhost}
+   port: 35001
