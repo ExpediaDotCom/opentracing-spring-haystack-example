@@ -9,6 +9,10 @@ jdk:
 services:
   - docker
 
+cache:
+  directories:
+    - $HOME/.m2
+
 env:
   global:
     - BRANCH=${TRAVIS_BRANCH}
